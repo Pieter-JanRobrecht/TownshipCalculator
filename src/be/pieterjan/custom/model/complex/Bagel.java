@@ -8,5 +8,6 @@ public class Bagel extends Product {
         getIngredients().put(Wheat.class, 2);
         getIngredients().put(Sugar.class, 1);
         getIngredients().put(Egg.class, 3);
+        setTime(30);
     }
 }

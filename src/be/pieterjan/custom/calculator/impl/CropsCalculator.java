@@ -1,11 +1,13 @@
-package be.pieterjan.custom.calculator;
+package be.pieterjan.custom.calculator.impl;
 
+import be.pieterjan.custom.calculator.Calculator;
 import be.pieterjan.custom.model.IngredientList;
 import be.pieterjan.custom.model.Product;
 import be.pieterjan.custom.model.Crop;
 
 public class CropsCalculator extends Calculator<IngredientList> {
 
+    @Override
     public IngredientList calculate(int amount, Class<? extends Product> productClass) {
         try {
             Product product = productClass.newInstance();

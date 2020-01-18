@@ -6,5 +6,6 @@ public class SugarCane extends Crop {
     public SugarCane() {
         getIngredients().put(SugarCane.class, 1);
         setPrice(3);
+        setTime(20);
     }
 }

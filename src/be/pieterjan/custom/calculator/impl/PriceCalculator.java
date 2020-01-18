@@ -1,5 +1,6 @@
-package be.pieterjan.custom.calculator;
+package be.pieterjan.custom.calculator.impl;
 
+import be.pieterjan.custom.calculator.Calculator;
 import be.pieterjan.custom.model.Crop;
 import be.pieterjan.custom.model.Product;
 

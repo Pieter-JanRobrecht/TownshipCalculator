@@ -1,19 +1,14 @@
-package be.pieterjan.custom.calculator;
+package be.pieterjan.custom.calculator.impl;
 
 import be.pieterjan.custom.model.*;
-import be.pieterjan.custom.model.complex.Bagel;
-import be.pieterjan.custom.model.complex.Bread;
-import be.pieterjan.custom.model.complex.ChickenFeed;
-import be.pieterjan.custom.model.complex.Egg;
-import be.pieterjan.custom.model.crops.Carrot;
-import be.pieterjan.custom.model.crops.SugarCane;
-import be.pieterjan.custom.model.crops.Wheat;
+import be.pieterjan.custom.model.complex.*;
+import be.pieterjan.custom.model.crops.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CropsCalculatorTest {
-    CropsCalculator calculator = new CropsCalculator();
+    private CropsCalculator calculator = new CropsCalculator();
 
     @Test
     void testCalculateWheat() {

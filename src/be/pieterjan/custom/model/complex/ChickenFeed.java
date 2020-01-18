@@ -8,5 +8,6 @@ public class ChickenFeed extends Product {
     public ChickenFeed() {
         getIngredients().put(Wheat.class, 2);
         getIngredients().put(Carrot.class, 1);
+        setTime(10);
     }
 }

@@ -6,5 +6,6 @@ import be.pieterjan.custom.model.crops.SugarCane;
 public class Sugar extends Product {
     public Sugar() {
         getIngredients().put(SugarCane.class, 1);
+        setTime(20);
     }
 }

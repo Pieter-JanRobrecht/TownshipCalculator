@@ -1,6 +1,6 @@
 package be.pieterjan.custom;
 
-import be.pieterjan.custom.calculator.CropsCalculator;
+import be.pieterjan.custom.calculator.impl.CropsCalculator;
 import be.pieterjan.custom.model.complex.Bagel;
 
 

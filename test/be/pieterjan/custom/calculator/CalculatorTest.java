@@ -1,5 +1,6 @@
 package be.pieterjan.custom.calculator;
 
+import be.pieterjan.custom.calculator.impl.PriceCalculator;
 import be.pieterjan.custom.model.IngredientList;
 import be.pieterjan.custom.model.crops.Carrot;
 import be.pieterjan.custom.model.Product;
@@ -9,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CropsCalculatorUtilsTest {
+class CalculatorTest {
 
     private Product testProduct;
     private Calculator<Integer> calculator = new PriceCalculator();

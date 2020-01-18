@@ -1,4 +1,4 @@
-package be.pieterjan.custom.calculator;
+package be.pieterjan.custom.calculator.impl;
 
 import be.pieterjan.custom.model.crops.*;
 import be.pieterjan.custom.model.complex.*;
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PriceCalculatorTest {
-    PriceCalculator calculator = new PriceCalculator();
+    private PriceCalculator calculator = new PriceCalculator();
 
     @Test
     void testPriceWheat() {
