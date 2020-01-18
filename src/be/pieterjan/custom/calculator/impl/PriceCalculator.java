@@ -4,7 +4,7 @@ import be.pieterjan.custom.calculator.Calculator;
 import be.pieterjan.custom.model.Crop;
 import be.pieterjan.custom.model.Product;
 
-public class PriceCalculator extends Calculator<Integer> {
+public class PriceCalculator implements Calculator<Integer> {
     public Integer calculate(int amount, Class<? extends Product> productClass)
             throws IllegalAccessException, InstantiationException {
         Integer priceTotal = 0;

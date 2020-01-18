@@ -5,7 +5,7 @@ import be.pieterjan.custom.model.Crop;
 import be.pieterjan.custom.model.IngredientList;
 import be.pieterjan.custom.model.Product;
 
-public class CropsCalculator extends Calculator<IngredientList> {
+public class CropsCalculator implements Calculator<IngredientList> {
 
     @Override
     public IngredientList calculate(int amount, Class<? extends Product> productClass) throws IllegalAccessException, InstantiationException {

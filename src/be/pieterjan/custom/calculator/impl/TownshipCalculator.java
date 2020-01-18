@@ -5,7 +5,7 @@ import be.pieterjan.custom.model.CalculationResult;
 import be.pieterjan.custom.model.IngredientList;
 import be.pieterjan.custom.model.Product;
 
-public class TownshipCalculator extends Calculator<CalculationResult> {
+public class TownshipCalculator implements Calculator<CalculationResult> {
 
     Calculator<IngredientList> cropsCalculator = new CropsCalculator();
     Calculator<Integer> timeCalculator = new TimeCalculator();

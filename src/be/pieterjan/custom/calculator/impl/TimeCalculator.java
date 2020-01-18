@@ -7,7 +7,7 @@ import be.pieterjan.custom.model.Product;
 import java.util.HashSet;
 import java.util.Set;
 
-public class TimeCalculator extends Calculator<Integer> {
+public class TimeCalculator implements Calculator<Integer> {
 
     @Override
     public Integer calculate(int amount, Class<? extends Product> productClass) throws InstantiationException, IllegalAccessException {
