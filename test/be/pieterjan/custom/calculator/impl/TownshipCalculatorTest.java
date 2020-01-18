@@ -11,7 +11,7 @@ class TownshipCalculatorTest {
     TownshipCalculator calculator = new TownshipCalculator();
 
     @Test
-    void testWheat() {
+    void testWheat() throws Exception {
         CalculationResult result = calculator.calculate(1, Wheat.class);
 
         assertEquals(0, result.getTotalCost());
@@ -20,7 +20,7 @@ class TownshipCalculatorTest {
     }
 
     @Test
-    void testBagel() {
+    void testBagel() throws Exception {
         CalculationResult result = calculator.calculate(1, Bagel.class);
 
         assertEquals(9, result.getTotalCost());

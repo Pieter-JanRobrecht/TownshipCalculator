@@ -5,7 +5,8 @@ import be.pieterjan.custom.model.Product;
 
 
 public abstract class Calculator<R> {
-    public abstract R calculate(int amount, Class<? extends Product> productClass);
+    public abstract R calculate(int amount, Class<? extends Product> productClass)
+            throws InstantiationException, IllegalAccessException;
 
     protected int getAmountOfIngredient(Product product, Class<? extends Product> productClass) {
         IngredientList ingredients = product.getIngredients();

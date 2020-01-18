@@ -28,4 +28,13 @@ public class CalculationResult {
     public void setIngredientList(IngredientList ingredientList) {
         this.ingredientList = ingredientList;
     }
+
+    @Override
+    public String toString() {
+        return "CalculationResult{" +
+                "totalTime=" + totalTime +
+                ", totalCost=" + totalCost +
+                ", ingredientList=" + ingredientList +
+                '}';
+    }
 }

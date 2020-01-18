@@ -11,21 +11,21 @@ class CropsCalculatorTest {
     private CropsCalculator calculator = new CropsCalculator();
 
     @Test
-    void testCalculateWheat() {
+    void testCalculateWheat() throws Exception {
         IngredientList actual = calculator.calculate(2, Wheat.class);
 
         assertEquals(2, actual.get(Wheat.class));
     }
 
     @Test
-    void testCalculateCarrot() {
+    void testCalculateCarrot() throws Exception {
         IngredientList actual = calculator.calculate(3, Carrot.class);
 
         assertEquals(3, actual.get(Carrot.class));
     }
 
     @Test
-    void testCalculateBread() {
+    void testCalculateBread() throws Exception {
         IngredientList actual = calculator.calculate(2, Bread.class);
 
         assertEquals(4, actual.get(Wheat.class));
@@ -33,7 +33,7 @@ class CropsCalculatorTest {
     }
 
     @Test
-    void testCalculateChickenFeed() {
+    void testCalculateChickenFeed() throws Exception {
         IngredientList actual = calculator.calculate(1, ChickenFeed.class);
 
         assertEquals(2, actual.get(Wheat.class));
@@ -41,7 +41,7 @@ class CropsCalculatorTest {
     }
 
     @Test
-    void testCalculateEgg() {
+    void testCalculateEgg() throws Exception {
         IngredientList actual = calculator.calculate(2, Egg.class);
 
         assertEquals(4, actual.get(Wheat.class));
@@ -49,7 +49,7 @@ class CropsCalculatorTest {
     }
 
     @Test
-    void testCalculateBagel() {
+    void testCalculateBagel() throws Exception {
         IngredientList actual = calculator.calculate(1, Bagel.class);
 
         assertEquals(8, actual.get(Wheat.class));

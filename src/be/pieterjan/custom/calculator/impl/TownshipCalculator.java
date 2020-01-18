@@ -12,7 +12,8 @@ public class TownshipCalculator extends Calculator<CalculationResult> {
     Calculator<Integer> priceCalculator = new PriceCalculator();
 
     @Override
-    public CalculationResult calculate(int amount, Class<? extends Product> productClass) {
+    public CalculationResult calculate(int amount, Class<? extends Product> productClass)
+            throws IllegalAccessException, InstantiationException {
         CalculationResult result = new CalculationResult();
 
         result.setIngredientList(cropsCalculator.calculate(amount, productClass));
