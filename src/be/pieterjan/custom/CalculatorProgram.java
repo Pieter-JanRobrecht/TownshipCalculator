@@ -1,11 +1,11 @@
 package be.pieterjan.custom;
 
+import be.pieterjan.custom.calculator.CropsCalculator;
 import be.pieterjan.custom.model.complex.Bagel;
 
-import static be.pieterjan.custom.calculator.CropsCalculator.calculate;
 
 public class CalculatorProgram {
     public static void main(String[] args) {
-        System.out.println(calculate(34, Bagel.class));
+        System.out.println(new CropsCalculator().calculate(34, Bagel.class));
     }
 }

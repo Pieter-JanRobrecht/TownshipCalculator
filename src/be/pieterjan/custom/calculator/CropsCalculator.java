@@ -4,45 +4,43 @@ import be.pieterjan.custom.model.IngredientList;
 import be.pieterjan.custom.model.Product;
 import be.pieterjan.custom.model.Crop;
 
-import static be.pieterjan.custom.calculator.CalculatorUtils.getAmountForClass;
+public class CropsCalculator extends Calculator<IngredientList> {
 
-public class CropsCalculator {
-
-    public static IngredientList calculate(int amount, Class<? extends Product> productClass) {
+    public IngredientList calculate(int amount, Class<? extends Product> productClass) {
         try {
             Product product = productClass.newInstance();
-            IngredientList calculated = new IngredientList();
+            IngredientList resultList = new IngredientList();
 
             for (Class<? extends Product> ingredientClass : product.getIngredients().keySet()) {
-                int amountOfIngredients = getAmountForClass(product, ingredientClass);
+                int amountOfIngredient = getAmountOfIngredient(product, ingredientClass);
 
                 if (Crop.class.isAssignableFrom(ingredientClass)) {
-                    addCropsToResult(amount, calculated, ingredientClass, amountOfIngredients);
+                    addCropsToResult(amount, resultList, ingredientClass, amountOfIngredient);
                 } else {
-                    addComplexToResult(amount, calculated, ingredientClass, amountOfIngredients);
+                    addComplexToResult(amount, resultList, ingredientClass, amountOfIngredient);
                 }
             }
 
-            return calculated;
+            return resultList;
         } catch (IllegalAccessException | InstantiationException e) {
             e.printStackTrace();
             throw new IllegalArgumentException("Should have given an accepted class");
         }
     }
 
-    private static void addComplexToResult(int amount, IngredientList calculated, Class<? extends Product> ingredientClass, int amountOfIngredients) {
+    private void addComplexToResult(int amount, IngredientList resultList, Class<? extends Product> ingredientClass, int amountOfIngredients) {
         for (int i = 0; i < amountOfIngredients; i++) {
-            calculated.putAll(calculate(amount, ingredientClass));
+            resultList.putAll(calculate(amount, ingredientClass));
         }
     }
 
-    private static void addCropsToResult(int amount, IngredientList calculated, Class<? extends Product> ingredientClass, int amountOfIngredients) {
+    private void addCropsToResult(int amount, IngredientList resultList, Class<? extends Product> ingredientClass, int amountOfIngredients) {
         int help = amountOfIngredients * amount;
 
-        if (calculated.containsKey(ingredientClass)) {
-            help += calculated.get(ingredientClass);
+        if (resultList.containsKey(ingredientClass)) {
+            help += resultList.get(ingredientClass);
         }
 
-        calculated.put(ingredientClass, help);
+        resultList.put(ingredientClass, help);
     }
 }

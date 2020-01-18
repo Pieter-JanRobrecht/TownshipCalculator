@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CropsCalculatorUtilsTest {
 
     private Product testProduct;
+    private Calculator<Integer> calculator = new PriceCalculator();
 
     @BeforeEach
     void setUp() {
@@ -24,14 +25,14 @@ class CropsCalculatorUtilsTest {
 
     @Test
     void testGetAmountPresent() {
-        int amount = CalculatorUtils.getAmountForClass(testProduct, Wheat.class);
+        int amount = calculator.getAmountOfIngredient(testProduct, Wheat.class);
 
         assertEquals(1, amount);
     }
 
     @Test
     void testGetAmountNotPresent() {
-        int amount = CalculatorUtils.getAmountForClass(testProduct, Carrot.class);
+        int amount = calculator.getAmountOfIngredient(testProduct, Carrot.class);
 
         assertEquals(0, amount);
     }

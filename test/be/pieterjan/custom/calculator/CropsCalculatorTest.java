@@ -10,28 +10,28 @@ import be.pieterjan.custom.model.crops.SugarCane;
 import be.pieterjan.custom.model.crops.Wheat;
 import org.junit.jupiter.api.Test;
 
-import static be.pieterjan.custom.calculator.CropsCalculator.calculate;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CropsCalculatorTest {
+    CropsCalculator calculator = new CropsCalculator();
 
     @Test
     void testCalculateWheat() {
-        IngredientList actual = calculate(2, Wheat.class);
+        IngredientList actual = calculator.calculate(2, Wheat.class);
 
         assertEquals(2, actual.get(Wheat.class));
     }
 
     @Test
     void testCalculateCarrot() {
-        IngredientList actual = calculate(3, Carrot.class);
+        IngredientList actual = calculator.calculate(3, Carrot.class);
 
         assertEquals(3, actual.get(Carrot.class));
     }
 
     @Test
     void testCalculateBread() {
-        IngredientList actual = calculate(2, Bread.class);
+        IngredientList actual = calculator.calculate(2, Bread.class);
 
         assertEquals(4, actual.get(Wheat.class));
         assertNull(actual.get(Carrot.class));
@@ -39,7 +39,7 @@ class CropsCalculatorTest {
 
     @Test
     void testCalculateChickenFeed() {
-        IngredientList actual = calculate(1, ChickenFeed.class);
+        IngredientList actual = calculator.calculate(1, ChickenFeed.class);
 
         assertEquals(2, actual.get(Wheat.class));
         assertEquals(1, actual.get(Carrot.class));
@@ -47,7 +47,7 @@ class CropsCalculatorTest {
 
     @Test
     void testCalculateEgg() {
-        IngredientList actual = calculate(2, Egg.class);
+        IngredientList actual = calculator.calculate(2, Egg.class);
 
         assertEquals(4, actual.get(Wheat.class));
         assertEquals(2, actual.get(Carrot.class));
@@ -55,7 +55,7 @@ class CropsCalculatorTest {
 
     @Test
     void testCalculateBagel() {
-        IngredientList actual = calculate(1, Bagel.class);
+        IngredientList actual = calculator.calculate(1, Bagel.class);
 
         assertEquals(8, actual.get(Wheat.class));
         assertEquals(3, actual.get(Carrot.class));
